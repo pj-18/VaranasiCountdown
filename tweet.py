@@ -39,7 +39,7 @@ def tweet_countdown():
     wait_until_midnight_ist()
 
     today_ist = datetime.now(IST).date()
-    releaseDate = date(2025, 8, 9)
+    releaseDate = date(2026, 4, 7)
 
     if today_ist <= releaseDate:
         daysLeft = (releaseDate - today_ist).days - 1
