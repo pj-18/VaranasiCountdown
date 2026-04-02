@@ -36,7 +36,7 @@ def wait_until_target_ist():
         print(f"WARNING: Too early ({wait_seconds:.0f}s to target). Posting anyway.")
 
 def tweet_countdown():
-    wait_until_midnight_ist()
+    wait_until_target_ist()
 
     today_ist = datetime.now(IST).date()
     releaseDate = date(2026, 4, 7)
