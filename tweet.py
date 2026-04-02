@@ -19,21 +19,21 @@ client = tweepy.Client(
 
 IST = timezone(timedelta(hours=5, minutes=30))
 
-def wait_until_midnight_ist():
+def wait_until_target_ist():
     now = datetime.now(IST)
-    # Calculate next midnight IST
-    tomorrow = now.date() + timedelta(days=1)
-    midnight = datetime.combine(tomorrow, datetime.min.time()).replace(tzinfo=IST)
-    wait_seconds = (midnight - now).total_seconds()
+    target_hour = 21  # 9 PM IST — change to 0 for midnight
+    target = now.replace(hour=target_hour, minute=0, second=0, microsecond=0)
+    if now >= target:
+        target += timedelta(days=1)
+    wait_seconds = (target - now).total_seconds()
 
-    # Safety: only sleep if within 30 minutes of midnight
     if 0 < wait_seconds <= 1800:
-        print(f"Waiting {wait_seconds:.1f}s until midnight IST...")
+        print(f"Waiting {wait_seconds:.1f}s until {target_hour}:00 IST...")
         time.sleep(wait_seconds)
     elif wait_seconds <= 0:
-        print("Already past midnight, posting now.")
+        print("Already past target time, posting now.")
     else:
-        print(f"WARNING: Too early ({wait_seconds:.0f}s to midnight). Posting anyway.")
+        print(f"WARNING: Too early ({wait_seconds:.0f}s to target). Posting anyway.")
 
 def tweet_countdown():
     wait_until_midnight_ist()
