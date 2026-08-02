@@ -17,7 +17,7 @@ To wire it up:
    with `repo` scope (classic) or `Contents: read/write` + `Actions: read/write`
    (fine-grained), scoped to this repository.
 2. In cron-job.org, create a new cron job:
-   - **URL:** `https://api.github.com/repos/pj-18/varanasicountdown/dispatches`
+   - **URL:** `https://api.github.com/repos/pj-18/VaranasiCountdown/dispatches`
    - **Schedule:** daily at `15:10 UTC` (matches the original workflow schedule)
    - **Request method:** `POST`
    - **Headers:**
