@@ -1,6 +1,6 @@
 # VaranasiCountdown
 
-Tweets a daily countdown of days remaining until 2026-04-07, posted around 9 PM IST.
+Tweets a daily countdown of days remaining until 2027-04-07, posted around 9 PM IST.
 
 ## Scheduling via cron-job.org
 
