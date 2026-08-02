@@ -1,6 +1,6 @@
 # VaranasiCountdown
 
-Tweets a daily countdown of days remaining until 2026-04-07, posted around 9 PM IST.
+Tweets a daily countdown of days remaining until 2027-04-07, posted around 9 PM IST.
 
 ## Scheduling via cron-job.org
 
@@ -17,7 +17,7 @@ To wire it up:
    with `repo` scope (classic) or `Contents: read/write` + `Actions: read/write`
    (fine-grained), scoped to this repository.
 2. In cron-job.org, create a new cron job:
-   - **URL:** `https://api.github.com/repos/pj-18/varanasicountdown/dispatches`
+   - **URL:** `https://api.github.com/repos/pj-18/VaranasiCountdown/dispatches`
    - **Schedule:** daily at `15:10 UTC` (matches the original workflow schedule)
    - **Request method:** `POST`
    - **Headers:**
